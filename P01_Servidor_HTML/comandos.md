@@ -66,3 +66,17 @@ Crear y arrancar contenedor
 $docker run --name web-server -p 8080:80 robmosroc/web-server:v1 
 Comprobar si esta levantado el contenedor
 $docker ps
+
+#FASE 11 - Image build
+
+Crear Dockerfile
+Comando FROM para elegir la imagen
+FROM nginx:latest
+Comando COPY para poner el archivo index
+COPY ./html/index.html /usr/share/nginx/html
+Comando EXPOSE para abrir el puerto 80
+EXPOSE 80
+
+$Docker build para crear la imagen
+$docker build -t robmosroc/web-server .
+
